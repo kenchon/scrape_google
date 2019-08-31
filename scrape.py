@@ -23,7 +23,7 @@ class Scraper:
 
     def Search(self, keyword, ctype='text', maximum=50):
         print('Google', ctype.capitalize(), 'Search :', keyword)
-        result_json = {'keyword':keyword, 'ctype':ctype,}
+        result_json = {'keyword':keyword, 'ctype':ctype, 'result':[]}
         result, total = [], 0
         query = self.query_gen(keyword, ctype)
         while True:
@@ -43,7 +43,8 @@ class Scraper:
                 total += len(links)
 
         print('-> Finally got', str(len(result)), 'links')
-        return result
+        result_json['result'] = result
+        return result_json
 
     def query_gen(self, keyword, ctype):
         # query generator
@@ -66,9 +67,6 @@ class Scraper:
             page += 1
 
     def get_links(self, html, ctype):
-        """
-        
-        """
         soup = BeautifulSoup(html, 'lxml')
         if ctype == 'text':
             elements = soup.select('.rc > .r > a')
@@ -83,4 +81,4 @@ if __name__ == "__main__":
     args = parser.parse_args()
     g = Scraper()
     res = g.Search(keyword=args.keyword, ctype=args.ctype, maximum=args.cnum)
-    for i in res: print(i)
+    print(res)
