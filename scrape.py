@@ -21,14 +21,15 @@ class Scraper:
         self.session.headers.update({
             'User-Agent': 'Mozilla/5.0 (X11; Linux x86_64; rv:57.0) Gecko/20100101 Firefox/57.0'})
 
-    def Search(self, keyword, type='text', maximum=50):
-        print('Google', type.capitalize(), 'Search :', keyword)
+    def Search(self, keyword, ctype='text', maximum=50):
+        print('Google', ctype.capitalize(), 'Search :', keyword)
+        result_json = {'keyword':keyword, 'ctype':ctype,}
         result, total = [], 0
-        query = self.query_gen(keyword, type)
+        query = self.query_gen(keyword, ctype)
         while True:
             # get raw html
             html = self.session.get(next(query)).text
-            links = self.get_links(html, type)
+            links = self.get_links(html, ctype)
 
             # collect scraping results
             if not len(links):
@@ -44,17 +45,17 @@ class Scraper:
         print('-> Finally got', str(len(result)), 'links')
         return result
 
-    def query_gen(self, keyword, type):
+    def query_gen(self, keyword, ctype):
         # query generator
         page = 0
         while True:
-            if type == 'text':
+            if ctype == 'text':
                 params = parse.urlencode({
                     'q': keyword,
                     'num': '100',
                     'filter': '0',
                     'start': str(page * 100)})
-            elif type == 'image':
+            elif ctype == 'image':
                 params = parse.urlencode({
                     'q': keyword,
                     'tbm': 'isch',
@@ -64,12 +65,15 @@ class Scraper:
             yield self.GOOGLE_SEARCH_URL + '?' + params
             page += 1
 
-    def get_links(self, html, type):
+    def get_links(self, html, ctype):
+        """
+        
+        """
         soup = BeautifulSoup(html, 'lxml')
-        if type == 'text':
+        if ctype == 'text':
             elements = soup.select('.rc > .r > a')
             links = [e['href'] for e in elements]
-        elif type == 'image':
+        elif ctype == 'image':
             elements = soup.select('.rg_meta.notranslate')
             jsons = [json.loads(e.get_text()) for e in elements]
             links = [js['ou'] for js in jsons]
@@ -78,5 +82,5 @@ class Scraper:
 if __name__ == "__main__":
     args = parser.parse_args()
     g = Scraper()
-    res = g.Search(keyword=args.keyword, type=args.ctype, maximum=args.cnum)
+    res = g.Search(keyword=args.keyword, ctype=args.ctype, maximum=args.cnum)
     for i in res: print(i)
