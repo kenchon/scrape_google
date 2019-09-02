@@ -6,6 +6,6 @@
     - Image: `n`-top image URLs
 
 ## Usage
-```python
+```bash
 python scrape.py --keyword 'Junya Watanabe' --ctype image --cnum 100
 ```
