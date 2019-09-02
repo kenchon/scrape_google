@@ -1,0 +1,23 @@
+{
+  "name": "scraping",
+  "version": "1.0.0",
+  "description": "- Script to scrape google search engine. - Two types of contents are availabel     - Text: `n`-top webpage URLs     - Image: `n`-top image URLs",
+  "main": "index.js",
+  "dependencies": {
+    "express": "^4.17.1"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/kenmikanmi/scrape_google.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/kenmikanmi/scrape_google/issues"
+  },
+  "homepage": "https://github.com/kenmikanmi/scrape_google#readme"
+}
