@@ -3,7 +3,7 @@
 
 ### `scrape.py`
 - Script to scrape google search engine.
-- Two types of contents are availabel
+- Two types of contents are available
     - Text: `n`-top webpage URLs
     - Image: `n`-top image URLs
 
