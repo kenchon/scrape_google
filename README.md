@@ -8,10 +8,22 @@
     - Image: `n`-top image URLs
 
 ## Usage
+
+### Run the script on your bare-metal machine.
+#### Requirements:
+- Python `3.x`
+- bs4: `pip install bs4` to install the package.
+
+#### Run
 ```bash
 python scrape.py --keyword 'Junya Watanabe' --ctype image --cnum 100
 ```
-### Use as API server
+### Run the script on docker container
+
+#### Requirements:
+- The latest version of docker should be installed
+
+#### How to run
 Build this application with API server
 
 1. Clone this repository and move to working directory.
