@@ -1,6 +1,8 @@
 # Google Search Scraping Tool
 ## Overview
 
+![howtouse](https://i.imgur.com/NTuaVL1.gif)
+
 ### `scrape.py`
 - Script to scrape google search engine.
 - Two parameters should be specified:
