@@ -3,9 +3,7 @@
 
 ### `scrape.py`
 - Script to scrape google search engine.
-- Two types of contents should be specified by `--ctype` $\in \rm{\{"text","image"\}}$ with `--cnum` parameter $\in \mathbb{N}$
-    - Text: `n`-top webpage URLs
-    - Image: `n`-top image URLs
+- Two types of contents should be specified by `--ctype` <img src="https://latex.codecogs.com/gif.latex?\in\rm{\{'text','image'\}}" /> with `--cnum` parameter <img src="https://latex.codecogs.com/gif.latex?\in\{\mathbb{N}\} />
 
 ## Usage
 
