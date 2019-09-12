@@ -7,9 +7,6 @@
   - Target content type: `--ctype`∈{"text", "image"}
   - Number of contents : `--cnum` ∈ ℕ 
 
-### `Dockerfile`
-
-
 ## Usage
 
 ### 1. Use as a script.
