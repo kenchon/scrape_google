@@ -12,19 +12,22 @@
 
 ## Usage
 
-### 1. Run the script on your bare-metal machine.
+### 1. Use as a script.
 #### 1.1 Requirements:
 - Python `3.x`
-- `bs4`, `lxml`: `pip install bs4, lxml` to install the packages.
+- `bs4`, `lxml`
+  - `pip install bs4, lxml` to install the packages.
 
 #### 1.2 How to run
 ```bash
 python scrape.py --keyword 'Junya Watanabe' --ctype image --cnum 100
 ```
 ### 2. Run the script on docker container
-
 #### 2.1 Requirements:
-- The latest version of `docker` should be installed
+```bash
+➜  scrape_google git:(master) docker -v
+Docker version 19.03.2, build 6a30dfc
+```
 
 #### 2.2 How to run
 
