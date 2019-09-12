@@ -3,26 +3,30 @@
 
 ### `scrape.py`
 - Script to scrape google search engine.
-- Two types of contents should be specified by `--ctype` <img src="https://latex.codecogs.com/gif.latex?\in\rm{\{'text','image'\}}" /> with `--cnum` parameter <img src="https://latex.codecogs.com/gif.latex?\in\{\mathbb{N}\} />
+- Two parameters should be specified:
+  - Target content type: `--ctype`∈{"text", "image"}
+  - Number of contents : `--cnum` ∈ ℕ 
+
+### `Dockerfile`
+
 
 ## Usage
 
-### Run the script on your bare-metal machine.
-#### Requirements:
+### 1. Run the script on your bare-metal machine.
+#### 1.1 Requirements:
 - Python `3.x`
-- bs4: `pip install bs4` to install the package.
+- `bs4`, `lxml`: `pip install bs4, lxml` to install the packages.
 
-#### Run
+#### 1.2 How to run
 ```bash
 python scrape.py --keyword 'Junya Watanabe' --ctype image --cnum 100
 ```
-### Run the script on docker container
+### 2. Run the script on docker container
 
-#### Requirements:
-- The latest version of docker should be installed
+#### 2.1 Requirements:
+- The latest version of `docker` should be installed
 
-#### How to run
-Build this application with API server
+#### 2.2 How to run
 
 1. Clone this repository and move to working directory.
 2. Build the API server
