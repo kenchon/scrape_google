@@ -5,8 +5,9 @@
 
 ### `scrape.py`
 - Script to scrape google search engine.
-- Two parameters should be specified:
-  - Target content type: `--ctype`∈{"text", "image"}
+- Three parameters should be specified:
+  - Keyword to Search:   `--keyword`
+  - Target content type: `--ctype`∈ {"text", "image"}
   - Number of contents : `--cnum` ∈ ℕ 
 
 ## Usage
@@ -24,7 +25,7 @@ python scrape.py --keyword 'Junya Watanabe' --ctype image --cnum 100
 ### 2. Run the script on docker container
 #### 2.1 Requirements:
 ```bash
-➜  scrape_google git:(master) docker -v
+docker -v
 Docker version 19.03.2, build 6a30dfc
 ```
 
