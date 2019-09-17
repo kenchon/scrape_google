@@ -5,7 +5,7 @@
 
 ### `scrape.py`
 - Script to scrape google search engine.
-- Three parameters should be specified:
+- Three parameters should be specified by following `--<options>`:
   - Keyword to Search:   `--keyword`
   - Target content type: `--ctype`∈ {"text", "image"}
   - Number of contents : `--cnum` ∈ ℕ 
