@@ -42,7 +42,6 @@ class Scraper:
                 result += links
                 total += len(links)
 
-        print('-> Finally got', str(len(result)), 'links')
         result_json['result'] = result
         return result_json
 
