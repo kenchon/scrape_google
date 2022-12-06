@@ -4,7 +4,7 @@
   "description": "- Script to scrape google search engine. - Two types of contents are availabel     - Text: `n`-top webpage URLs     - Image: `n`-top image URLs",
   "main": "index.js",
   "dependencies": {
-    "express": "^4.17.1"
+    "express": "^4.18.2"
   },
   "devDependencies": {},
   "scripts": {
